@@ -1,0 +1,117 @@
+openapi: 3.0.3
+info:
+  title: B2B Stock & Orders API
+  version: "1.0"
+servers:
+  - url: https://k7n8794nyf.execute-api.eu-north-1.amazonaws.com/v1
+paths:
+  /orders:
+    post:
+      summary: Create order
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [companyId, quantity]
+              properties:
+                companyId: { type: string, example: "COMP1" }
+                quantity: { type: number, example: 5 }
+      responses:
+        "201": { description: Created }
+        "400": { description: Bad Request }
+
+  /orders/company/{companyId}:
+    get:
+      summary: List company orders
+      parameters:
+        - name: companyId
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        "200": { description: OK }
+
+  /orders/admin/all:
+    get:
+      summary: List all orders (Admin)
+      responses:
+        "200": { description: OK }
+
+  /orders/{companyId}/{orderId}/reserve:
+    post:
+      summary: Reserve order (deduct from inventory)
+      parameters:
+        - name: companyId
+          in: path
+          required: true
+          schema: { type: string }
+        - name: orderId
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        "200": { description: OK }
+        "400": { description: Bad Request }
+        "404": { description: Not Found }
+
+  /orders/{companyId}/{orderId}/ship:
+    post:
+      summary: Ship order
+      parameters:
+        - name: companyId
+          in: path
+          required: true
+          schema: { type: string }
+        - name: orderId
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        "200": { description: OK }
+
+  /orders/{companyId}/{orderId}/deliver:
+    post:
+      summary: Deliver order
+      parameters:
+        - name: companyId
+          in: path
+          required: true
+          schema: { type: string }
+        - name: orderId
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        "200": { description: OK }
+
+  /stock/add:
+    post:
+      summary: Add stock amount
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [amount]
+              properties:
+                amount: { type: number, example: 100 }
+      responses:
+        "200": { description: OK }
+
+  /stock/threshold:
+    post:
+      summary: Set low stock threshold
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [lowThreshold]
+              properties:
+                lowThreshold: { type: number, example: 10 }
+      responses:
+        "200": { description: OK }

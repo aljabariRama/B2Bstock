@@ -1,0 +1,5 @@
+fastapi
+pydantic[email]
+mangum
+boto3
+uvicorn
