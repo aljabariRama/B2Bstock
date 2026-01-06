@@ -1,0 +1,188 @@
+:root {
+  --bg: #f6f2ea;
+  --card: #ffffff;
+  --primary: #0c2340;
+  --secondary: #6b7280;
+  --border: rgba(12,35,64,.12);
+  --gold: #c9a227;
+  --gold-soft: rgba(201,162,39,.12);
+  --chip-bg: rgba(12,35,64,.06);
+  --chip-border: rgba(12,35,64,.08);
+}
+
+html, body {
+  background: var(--bg);
+  color: var(--primary);
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.dashPage {
+  padding: 22px 28px;
+}
+
+.dashTopActions {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.pillBtn {
+  border-radius: 999px !important;
+  padding: 6px 16px !important;
+  font-weight: 700 !important;
+  text-transform: none !important;
+  border: 1px solid var(--border) !important;
+  background: var(--card) !important;
+  color: var(--primary) !important;
+}
+
+.pillBtn.danger {
+  border-color: rgba(201,162,39,.45) !important;
+  background: rgba(201,162,39,.15) !important;
+}
+
+.dashTitle {
+  font-size: 40px !important;
+  font-weight: 900 !important;
+  color: var(--primary) !important;
+  margin: 10px 0 18px !important;
+}
+
+.companyCard {
+  border-radius: 18px !important;
+  background: var(--card) !important;
+  box-shadow: 0 18px 50px rgba(0,0,0,.08) !important;
+  margin-bottom: 18px !important;
+}
+
+.companyCardContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.companyLeft {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.companyAvatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  background: var(--gold-soft);
+  color: var(--primary);
+}
+
+.companyName {
+  font-size: 22px !important;
+  font-weight: 900 !important;
+  color: var(--primary) !important;
+}
+
+.companyChips {
+  display: flex;
+  gap: 8px;
+  margin-top: 6px;
+  flex-wrap: wrap;
+}
+
+.chipSoft {
+  background: var(--chip-bg) !important;
+  border: 1px solid var(--chip-border) !important;
+}
+
+.companyId {
+  margin-top: 8px !important;
+  font-size: 12px !important;
+  color: var(--secondary) !important;
+}
+
+.companyRight {
+  display: flex;
+  gap: 10px;
+}
+
+.primaryBtn {
+  border-radius: 999px !important;
+  padding: 8px 16px !important;
+  font-weight: 800 !important;
+  text-transform: none !important;
+  background: var(--primary) !important;
+  color: #fff !important;
+}
+
+.dashGrid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 16px;
+}
+
+.dashCard {
+  border-radius: 18px !important;
+  background: var(--card) !important;
+  box-shadow: 0 18px 50px rgba(0,0,0,.08) !important;
+}
+
+.cardTitle {
+  font-weight: 900 !important;
+  color: var(--primary) !important;
+}
+
+.cardSub {
+  font-size: 12px !important;
+  color: var(--secondary) !important;
+  margin-top: 4px !important;
+}
+
+.catalogList {
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.catalogItem {
+  border: 1px solid rgba(0,0,0,.08);
+  background: var(--card);
+  border-radius: 16px;
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.catalogIcon {
+  width: 36px;
+  height: 36px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  background: var(--gold-soft);
+  color: var(--primary);
+}
+
+.catalogName {
+  font-weight: 900 !important;
+  color: var(--primary) !important;
+}
+
+.catalogTags {
+  display: flex;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.chipMini {
+  background: var(--chip-bg)
+}
